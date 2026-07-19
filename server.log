@@ -1,0 +1,30 @@
+
+> aera-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1731ms
+ ○ Compiling / ...
+ ✓ Compiled / in 9.2s (1576 modules)
+ ✓ Compiled in 967ms (758 modules)
+ GET / 200 in 10334ms
+ ○ Compiling /features ...
+ ✓ Compiled /features in 3s (1557 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /features 200 in 3199ms
+ ✓ Compiled /pricing in 328ms (1561 modules)
+ GET /pricing 200 in 427ms
+ ✓ Compiled in 755ms (1569 modules)
+ GET / 200 in 329ms
+ ✓ Compiled /features in 159ms (812 modules)
+ GET /features 200 in 331ms
+ ✓ Compiled /pricing in 153ms (815 modules)
+ GET /pricing 200 in 251ms
+ ✓ Compiled in 651ms (1569 modules)
+ ✓ Compiled in 925ms (1569 modules)
+ ✓ Compiled in 455ms (1555 modules)
+ ✓ Compiled in 173ms (760 modules)
+ ✓ Compiled in 241ms (1555 modules)
