@@ -1,2 +1,139 @@
-@tailwind base;@tailwind components;@tailwind utilities;
-:root{scroll-behavior:smooth}body{background:#fff;color:#0f172a}.noise{background-image:radial-gradient(#2563eb14 1px,transparent 1px);background-size:24px 24px}.glass{background:rgba(255,255,255,.74);backdrop-filter:blur(18px);border:1px solid rgba(226,232,240,.85)}.shine{position:relative;overflow:hidden}.shine:after{content:"";position:absolute;inset:-120% -40%;background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.55),transparent 58%);transform:translateX(-55%) rotate(8deg);transition:transform .9s}.shine:hover:after{transform:translateX(55%) rotate(8deg)}.reveal{animation:fadeUp .8s ease both}@keyframes fadeUp{from{opacity:0;transform:translateY(22px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}.float{animation:float 5s ease-in-out infinite}.bg-grid{background-image:linear-gradient(#e5e7eb66 1px,transparent 1px),linear-gradient(90deg,#e5e7eb66 1px,transparent 1px);background-size:44px 44px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:.9rem 1.25rem;font-weight:700;transition:.25s}.btn-primary{background:#2563EB;color:white;box-shadow:0 16px 34px #2563eb40}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 45px #2563eb50}.btn-secondary{background:white;color:#0f172a;border:1px solid #E5E7EB}.section{padding:6rem 1rem}.container{max-width:1180px;margin:0 auto}.eyebrow{color:#2563EB;font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.75rem}.h2{font-size:clamp(2.2rem,5vw,4.8rem);line-height:.95;font-weight:900;letter-spacing:-.06em}.lead{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.7;color:#64748B}.card{border:1px solid #E5E7EB;border-radius:2rem;background:white;box-shadow:0 20px 60px rgba(15,23,42,.08)}
+@import "tailwindcss";
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: #0f172a;
+}
+
+.noise {
+  background-image: radial-gradient(#2563eb14 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine:after {
+  content: "";
+  position: absolute;
+  inset: -120% -40%;
+  background: linear-gradient(100deg, transparent 42%, rgba(255, 255, 255, 0.55), transparent 58%);
+  transform: translateX(-55%) rotate(8deg);
+  transition: transform 0.9s;
+}
+
+.shine:hover:after {
+  transform: translateX(55%) rotate(8deg);
+}
+
+.reveal {
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.bg-grid {
+  background-image: linear-gradient(#e5e7eb66 1px, transparent 1px), linear-gradient(90deg, #e5e7eb66 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.9rem 1.25rem;
+  font-weight: 700;
+  transition: 0.25s;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 16px 34px #2563eb40;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 45px #2563eb50;
+}
+
+.btn-secondary {
+  background: white;
+  color: #0f172a;
+  border: 1px solid #e5e7eb;
+}
+
+.section {
+  padding: 6rem 1rem;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.h2 {
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.lead {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 2rem;
+  background: #efefef#efefef;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}

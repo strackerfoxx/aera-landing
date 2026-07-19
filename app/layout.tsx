@@ -1,5 +1,41 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { siteUrl } from '@/lib/content';
-export const metadata: Metadata = { metadataBase: new URL(siteUrl), title: { default: 'Aera | Appointments without friction', template: '%s | Aera' }, description: 'Aera is premium appointment scheduling software for modern businesses. OTP booking, calendars, clients, services, professionals, and availability in one platform.', keywords: ['appointment scheduling software','booking software','appointment management','online booking','salon booking software','clinic appointment software','dentist booking software','barbershop software'], alternates:{canonical:'/'}, openGraph:{title:'Aera — Appointments without friction',description:'Modern appointment management that helps customers book in under one minute.',url:siteUrl,siteName:'Aera',type:'website'}, twitter:{card:'summary_large_image',title:'Aera — Appointments without friction',description:'Modern appointment scheduling software for premium service businesses.'}, robots:{index:true,follow:true} };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body className="font-sans antialiased">{children}</body></html>}
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: { default: 'Aera | Software de reservas de citas', template: '%s | Aera' },
+  description: 'Aera es un software de reservas de citas para barberías, salones, clínicas, dentistas y negocios de servicios que necesitan gestionar citas online, disponibilidad y clientes de forma simple.',
+  keywords: [
+    'software de reservas de citas',
+    'gestión de citas',
+    'reserva online',
+    'software para salones',
+    'software para clínicas',
+    'software para dentistas',
+    'software para barberías',
+    'software de agendamiento',
+  ],
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Aera | Software de reservas de citas',
+    description: 'Gestione reservas online, disponibilidad y clientes con una plataforma simple y escalable para negocios de servicios.',
+    url: siteUrl,
+    siteName: 'Aera',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aera | Software de reservas de citas',
+    description: 'Reserva online, gestión de citas y disponibilidad en una sola plataforma para negocios de servicios.',
+  },
+  robots: { index: true, follow: true },
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="es">
+      <body className="font-sans antialiased">{children}</body>
+    </html>
+  );
+}

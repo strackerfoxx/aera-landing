@@ -1,3 +1,24 @@
-import type { Metadata } from 'next';import { FAQ, FinalCTA, PageShell, PricingCards, SectionTitle } from '@/components/site';
-export const metadata:Metadata={title:'Pricing',description:'Simple Aera pricing for appointment management software. Clear plans, no hidden fees, enterprise contact available.'};
-export default function Pricing(){return <PageShell><section className="section pt-36"><SectionTitle kicker="Pricing" title="Choose the plan that removes the most friction." text="Transparent pricing for teams ready to modernize booking, scheduling, and client management."/><PricingCards/><div className="container mt-8 rounded-[2rem] border border-blue-200 bg-blue-50 p-8 text-center"><h2 className="text-2xl font-black">Enterprise and multi-location</h2><p className="mt-2 text-slate-600">Need advanced onboarding, reporting, or dedicated support? Contact sales for a tailored rollout.</p></div></section><FAQ/><FinalCTA/></PageShell>}
+import type { Metadata } from 'next';
+import { FAQ, FinalCTA, PageShell, PricingCards, SectionTitle } from '@/components/site';
+
+export const metadata: Metadata = {
+  title: 'Precios | Software de reservas de citas Aera',
+  description: 'Conozca los planes de Aera para software de reservas de citas: mensual, anual y empresas a medida para negocios con varias sucursales.',
+};
+
+export default function Pricing() {
+  return (
+    <PageShell>
+      <section className="section pt-36">
+        <SectionTitle kicker="Precios" title="Software de reservas de citas para crecer sin fricción" text="Elija un plan mensual, anual o una solución personalizada para múltiples sucursales y mantenga su operación de citas organizada, escalable y preparada para crecer." />
+        <PricingCards />
+        <div className="container mt-8 rounded-[2rem] border border-blue-200 bg-blue-50 p-8 text-center">
+          <h2 className="text-2xl font-black">Soluciones para negocios con varias sucursales</h2>
+          <p className="mt-2 text-slate-600">Aera centraliza la reserva online, la disponibilidad del equipo y los reportes por sede para que franquicias y cadenas operen con mayor control y consistencia.</p>
+        </div>
+      </section>
+      <FAQ />
+      <FinalCTA />
+    </PageShell>
+  );
+}
