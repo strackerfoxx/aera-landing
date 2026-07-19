@@ -6,7 +6,6 @@ export const nav = [
   { label: 'Industrias', href: '/industries' },
   { label: 'Precios', href: '/pricing' },
   { label: 'Acerca de', href: '/about' },
-  { label: 'Blog', href: '/blog' },
 ];
 
 export const features = [
@@ -27,12 +26,6 @@ export const faqs = [
   ['¿Cada profesional puede tener disponibilidad separada?', 'Sí. Aera admite horarios de profesionales, días asignados, horas de trabajo e intervalos de citas.'],
   ['¿Aera solo sirve para salones?', 'No. Aera está pensado para cualquier negocio basado en citas, desde clínicas y dentistas hasta consultores y gimnasios.'],
   ['¿Qué tan rápido se puede implementar?', 'La mayoría de equipos pueden configurar servicios, personal, horarios y su flujo de reserva en una sola sesión de implementación.']
-];
-
-export const posts = [
-  ['Cómo la reserva orientada al teléfono aumenta la finalización de citas', 'Conversión', 'Una guía práctica para eliminar la fatiga de los formularios en la reserva online.'],
-  ['El costo oculto de la gestión manual de citas', 'Operaciones', 'Dónde se pierde el tiempo cuando calendarios, clientes y personal viven en herramientas separadas.'],
-  ['Cómo elegir software de reserva para negocios de servicios modernos', 'Guía de compra', 'Qué evaluar antes de llevar su sistema de citas a internet.']
 ];
 
 export const pricingPlans = [

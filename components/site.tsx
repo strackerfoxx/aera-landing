@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, ChevronDown, Play, X } from 'lucide-react';
-import { faqs, features, industries, nav, posts, pricingPlans } from '@/lib/content';
+import { faqs, features, industries, nav, pricingPlans } from '@/lib/content';
 
 const fade = {
   initial: { opacity: 0, y: 28, filter: 'blur(8px)' },
@@ -149,6 +149,8 @@ export function HomeSections() {
         <Timeline />
       </section>
 
+      <ProductScreenshots />
+
       <section className="section">
         <SectionTitle kicker="Plataforma" title="Todo lo que necesita el negocio. Nada más de lo que no necesita el cliente." text="Una plataforma completa de gestión de citas diseñada para la velocidad, la confianza y la claridad operativa." />
         <FeatureGrid />
@@ -175,6 +177,89 @@ export function Timeline() {
           <p className="mt-2 text-slate-500">Diseñado para sentirse claro, rápido y natural en cualquier dispositivo.</p>
         </motion.div>
       ))}
+    </div>
+  );
+}
+
+export function ProductScreenshots() {
+  return (
+    <section className="section bg-slate-950 text-white">
+      <SectionTitle kicker="Producto real" title="Muestre lo que cierra la venta." text="Incluimos pantallas reales solo donde sustituyen explicación por confianza: calendario, operación diaria y detalle accionable de cada cita." />
+      <div className="container grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
+        <motion.div {...fade} className="rounded-[2rem] border border-white/10 bg-black p-4 shadow-glow">
+          <TodayScreenshot />
+          <div className="mt-5 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
+            <p><b className="text-white">Agenda clara:</b> el equipo ve hora, estado, cliente y servicio sin abrir múltiples vistas.</p>
+            <p><b className="text-white">Calendario visible:</b> disponibilidad y demanda del mes aparecen junto a la operación diaria.</p>
+            <p><b className="text-white">Acción rápida:</b> crear cita está siempre a un clic para no perder llamadas o mensajes.</p>
+          </div>
+        </motion.div>
+        <div className="grid gap-6">
+          <motion.div {...fade} className="rounded-[2rem] border border-white/10 bg-black p-4 shadow-glow">
+            <CalendarScreenshot />
+            <p className="mt-4 text-sm text-slate-300"><b className="text-white">Vista mensual que vende orden:</b> los días con citas destacan sin saturar al usuario.</p>
+          </motion.div>
+          <motion.div {...fade} className="rounded-[2rem] border border-white/10 bg-black p-4 shadow-glow">
+            <AppointmentDetailScreenshot />
+            <p className="mt-4 text-sm text-slate-300"><b className="text-white">Detalle listo para actuar:</b> pago, servicio, profesional y mensajes se gestionan desde una sola pantalla.</p>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AppSidebar() {
+  return (
+    <aside className="hidden w-28 shrink-0 border-r border-white/10 bg-black p-3 text-[7px] font-bold text-white sm:block">
+      <p className="mb-5 text-[8px]">Aera</p>
+      {['Panel', 'Calendario', 'Clientes', 'Citas', 'Servicios', 'Equipo'].map((item) => (
+        <div key={item} className="mb-5 flex items-center gap-2"><span className="grid size-3 place-items-center rounded border border-white/60 text-[6px]">□</span>{item}</div>
+      ))}
+    </aside>
+  );
+}
+
+function TodayScreenshot() {
+  return (
+    <div className="flex min-h-[360px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-black text-white">
+      <AppSidebar />
+      <div className="flex-1 p-5">
+        <div className="flex items-start justify-between gap-4"><h3 className="text-3xl font-black tracking-tight sm:text-4xl">Citas de hoy</h3><button className="rounded-full bg-blue-600 px-4 py-2 text-xs font-bold">Crear cita</button></div>
+        <div className="mt-10 grid gap-5 lg:grid-cols-[1fr_270px]">
+          <div className="overflow-hidden rounded-2xl bg-neutral-900">
+            <div className="grid grid-cols-4 border-b border-white/10 px-5 py-4 text-xs font-bold text-slate-400"><span>Hora</span><span>Estado</span><span>Cliente</span><span>Servicios</span></div>
+            <div className="grid grid-cols-4 px-5 py-6 text-sm font-bold"><span>10:00</span><span><b className="rounded-full border border-yellow-400 bg-yellow-500/70 px-3 py-1 text-xs">Agendada</b></span><span>Alex Muñoz</span><span>Tinte de cabello</span></div>
+          </div>
+          <MiniCalendar />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MiniCalendar() {
+  const days = ['Su','Mo','Tu','We','Th','Fr','Sa','28','29','30','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1'];
+  return <div className="rounded-2xl bg-neutral-900 p-5 text-center text-xs"><b>July 2026</b><div className="mt-5 grid grid-cols-7 gap-3">{days.map((d,i)=><span key={i} className={(d==='1'?'rounded-full bg-blue-600 py-2 ':d==='18'?'rounded-lg bg-white/10 py-2 ':'py-2 ') + (i<7?'text-slate-400':'')}>{d}</span>)}</div></div>;
+}
+
+function CalendarScreenshot() {
+  return (
+    <div className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-black p-5 text-white">
+      <h3 className="text-3xl font-black tracking-tight">Calendario de Citas</h3>
+      <div className="mt-6 inline-flex items-center gap-4 rounded-xl bg-neutral-900 p-4 text-sm font-bold">Total Citas del Mes: <span className="rounded-full bg-white/10 px-3 py-2">2</span></div>
+      <div className="mt-5 rounded-2xl border border-white/10 bg-neutral-900 p-5 text-center text-xs"><b>July 2026</b><div className="mt-6 grid grid-cols-7 gap-y-7">{Array.from({length:35},(_,i)=>i+1).map((d)=><span key={d} className={d===4||d===5?'mx-auto grid size-12 place-items-center rounded-full bg-green-600/40 text-green-300':d===18?'mx-auto grid size-12 place-items-center rounded-full bg-white/10':'font-bold'}>{d<=31?d:''}</span>)}</div></div>
+    </div>
+  );
+}
+
+function AppointmentDetailScreenshot() {
+  return (
+    <div className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-black p-5 text-white">
+      <div className="flex items-center justify-between"><h3 className="text-2xl font-black tracking-tight">Detalles de la Cita</h3><span className="rounded-full bg-yellow-600 px-3 py-1 text-xs">Agendada</span></div>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Cliente</small><b className="mt-2 block">ales insti</b><p className="text-xs text-slate-400">+525578613202</p></div><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Resumen de Pago</small><b className="mt-2 block text-blue-400">$490</b></div></div>
+      <div className="mt-4 rounded-xl border border-white/10 p-4"><b>Servicios Asignados</b><div className="mt-3 rounded-lg bg-white/5 p-3 text-sm">Tinte de cabello · Cecilia - estilista</div></div>
+      <div className="mt-4 rounded-xl border border-white/10 p-4"><b>Enviar Mensaje</b><p className="mt-2 rounded-lg bg-neutral-900 p-3 text-xs text-slate-300">Aviso de retraso con tono profesional y directo.</p></div>
     </div>
   );
 }
@@ -362,19 +447,5 @@ export function PageShell({ children }: { children: React.ReactNode }) {
       <main>{children}</main>
       <Footer />
     </>
-  );
-}
-
-export function BlogList() {
-  return (
-    <div className="container grid gap-4 md:grid-cols-3">
-      {posts.map(([t, c, d]) => (
-        <article className="card p-7" key={t}>
-          <p className="eyebrow">{c}</p>
-          <h3 className="mt-4 text-2xl font-black">{t}</h3>
-          <p className="mt-3 text-slate-500">{d}</p>
-        </article>
-      ))}
-    </div>
   );
 }
