@@ -8,21 +8,21 @@ const whatsappHref = 'https://wa.me/525518839216?text=Hola%20%F0%9F%91%8B.%20Vi%
 const featureSections = [
   {
     title: 'Agenda online 24/7',
-    image: '/screenshots/appointments-list.png',
+    image: '/screenshots/appointments.png',
     alt: 'Lista de citas de Aera con estados, horarios, clientes y servicios.',
     text: 'Tus clientes reservan cuando quieren y tu equipo ve cada cita con hora, estado, cliente y servicio. Menos llamadas, menos mensajes perdidos y más reservas confirmadas.',
     bullets: ['Reservas visibles al instante', 'Estados claros: agendada, confirmada o cancelada', 'Acceso rápido a la información de cada cliente'],
   },
   {
     title: 'Calendario para vender más horarios',
-    image: '/screenshots/calendar-grid.png',
+    image: '/screenshots/calendar.png',
     alt: 'Calendario mensual de Aera con días destacados y total de citas.',
     text: 'Detecta huecos, días con alta demanda y disponibilidad del mes en una vista sencilla. Ideal para llenar espacios libres y organizar mejor al equipo.',
     bullets: ['Vista mensual fácil de leer', 'Días con citas destacados', 'Mejor control de capacidad y disponibilidad'],
   },
   {
     title: 'Vista diaria para operar sin caos',
-    image: '/screenshots/day-calendar.png',
+    image: '/screenshots/daily-appointments.png',
     alt: 'Calendario diario de Aera con citas distribuidas por horario.',
     text: 'Cada profesional puede revisar su día, preparar servicios y evitar cruces de horarios. La operación se mantiene clara desde la primera cita hasta el cierre.',
     bullets: ['Agenda del día por horario', 'Menos errores de coordinación', 'Seguimiento simple para recepción y profesionales'],
@@ -45,7 +45,7 @@ const featureSections = [
     title: 'Horarios y disponibilidad bajo control',
     image: '/screenshots/config-hours.png',
     alt: 'Configuración de horarios de trabajo en Aera.',
-    text: 'Define días, horas de trabajo e intervalos de citas para que la agenda venda solo los horarios que realmente puedes atender.',
+    text: 'Define días, horas de trabajo e intervalos de citas para que la agenda venda solo los horarios que realmente puedes atender. Puedes bloquear fechas y horas especiales para mantener la disponibilidad actualizada.',
     bullets: ['Horarios de trabajo configurables', 'Intervalos de cita definidos', 'Menos sobreventas y confusiones'],
   },
 ];
