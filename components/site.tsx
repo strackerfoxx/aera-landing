@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, ChevronDown, Play, X, MessageCircle, Calendar } from 'lucide-react';
+import { ArrowRight, Check, ChevronDown, Play, X, MessageCircle, Calendar, CircleX } from 'lucide-react';
 import { faqs, features, industries, nav, pricingPlans } from '@/lib/content';
 
 const fade = {
@@ -27,9 +27,14 @@ export function Navbar() {
               </Link>
             ))}
           </div>
-          <button onClick={() => setOpen(true)} className="btn btn-primary shine">
-            Solicitar demostración
-          </button>
+          <a
+            href="https://wa.me/525518839216?text=Hola%20%F0%9F%91%8B.%20Vi%20la%20p%C3%A1gina%20de%20Aera%20y%20me%20interesa%20conocer%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio.%20Me%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary shine"
+          >
+            Hablar con un asesor
+          </a>
         </nav>
       </header>
       {open && <DemoModal close={() => setOpen(false)} />}
@@ -43,7 +48,7 @@ export function DemoModal({ close }: { close: () => void }) {
       <motion.div initial={{ scale: 0.94, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="card max-w-xl p-6">
         <div className="flex justify-between">
           <div>
-            <p className="eyebrow">Solicitar demostración</p>
+            <p className="eyebrow">Hablar con un asesor</p>
             <h2 className="mt-2 text-3xl font-black tracking-tight">Vea Aera en acción.</h2>
           </div>
           <button onClick={close}>
@@ -75,12 +80,12 @@ export function Hero() {
             Aera ayuda a los clientes a reservar en menos de un minuto con solo su número de teléfono, mientras su equipo gestiona servicios, profesionales, horarios, clientes y citas desde un sistema simple y claro.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="/contact" className="btn btn-primary shine">
-              Solicitar demostración <ArrowRight className="ml-2 size-4" />
+            <a href="https://wa.me/525518839216?text=Hola%20%F0%9F%91%8B.%20Vi%20la%20p%C3%A1gina%20de%20Aera%20y%20me%20interesa%20conocer%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio.%20Me%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n." className="btn btn-primary shine">
+              Hablar con un asesor <ArrowRight className="ml-2 size-4" />
             </a>
-            <button className="btn btn-secondary">
+            <a href="https://youtu.be/F7T9pWfdVb4" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               <Play className="mr-2 size-4" /> Ver demostración
-            </button>
+            </a>
           </div>
         </motion.div>
         <ProductMockup />
@@ -140,8 +145,13 @@ export function HomeSections() {
       <section className="section">
         <SectionTitle kicker="Problema" title="La reserva sigue siendo demasiado compleja." text="Cuentas, contraseñas, llamadas telefónicas, preguntas repetidas y disponibilidad poco clara generan abandono antes de que exista la cita." />
         <div className="container grid gap-4 md:grid-cols-3">
-          {['Las llamadas perdidas se convierten en ingresos perdidos.', 'Los formularios largos hacen que los clientes abandonen.', 'Los calendarios manuales generan errores costosos.'].map((x) => (
-            <div className="card p-8 text-2xl font-black" key={x}>{x}</div>
+          {['Las llamadas perdidas se convierten en ingresos perdidos.', 'Las respuestas lentas hacen que los clientes abandonen.', 'Los calendarios manuales generan errores costosos.'].map((x) => (
+            <div className="card p-8 text-2xl font-black" key={x}>
+              <div className="flex items-start gap-3">
+                <CircleX className="mt-1 size-10 shrink-0 text-red-500" />
+                <span>{x}</span>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -225,10 +235,9 @@ function AppSidebar() {
 function TodayScreenshot() {
   return (
     <div className="flex min-h-[360px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-black text-white">
-      <AppSidebar />
       <div className="flex-1 p-5">
         <div className="flex items-start justify-between gap-4"><h3 className="text-3xl font-black tracking-tight sm:text-4xl">Citas de hoy</h3><button className="rounded-full bg-blue-600 px-4 py-2 text-xs font-bold">Crear cita</button></div>
-        <div className="mt-10 grid gap-5 lg:grid-cols-[1fr_270px]">
+        <div className="mt-10">
           <div className="overflow-hidden rounded-2xl bg-neutral-900">
             <div className="grid grid-cols-4 border-b border-white/10 px-5 py-4 text-xs font-bold text-slate-400"><span>Hora</span><span>Estado</span><span>Cliente</span><span>Servicios</span></div>
             <div className="grid grid-cols-4 border-b border-white/5 px-5 py-3 text-sm font-bold"><span>11:20</span><span><span className="rounded-full border border-yellow-500/50 bg-yellow-500/10 px-3 py-1 text-xs text-yellow-500">Agendada</span></span><span>Diego Castle</span><span>Retiro Esmalte</span></div>
@@ -244,7 +253,7 @@ function TodayScreenshot() {
 
 function MiniCalendar() {
   const days = ['Su','Mo','Tu','We','Th','Fr','Sa','28','29','30','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1'];
-  return <div className="rounded-2xl bg-neutral-900 p-5 text-center text-xs"><b>July 2026</b><div className="mt-5 grid grid-cols-7 gap-3">{days.map((d,i)=><span key={i} className={(d==='1'?'rounded-full bg-blue-600 text-white py-2 ':d==='18'?'rounded-lg bg-white/10 py-2 ':'py-2 ') + (i<7?'text-slate-400':'')}>{d}</span>)}</div></div>;
+  return <div className="rounded-2xl bg-neutral-900 p-5 text-center text-xs mt-10"><b>July 2026</b><div className="mt-5 grid grid-cols-7 gap-3">{days.map((d,i)=><span key={i} className={(d==='1'?'rounded-full bg-blue-600 text-white py-2 ':d==='18'?'rounded-lg bg-white/10 py-2 ':'py-2 ') + (i<7?'text-slate-400':'')}>{d}</span>)}</div></div>;
 }
 
 function CalendarScreenshot() {
@@ -261,7 +270,7 @@ function AppointmentDetailScreenshot() {
   return (
     <div className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-black p-5 text-white">
       <div className="flex items-center justify-between"><h3 className="text-2xl font-black tracking-tight">Detalles de la Cita</h3><div className="flex gap-2 items-center"><span className="rounded-full bg-yellow-600 px-3 py-1 text-xs text-yellow-100">Agendada</span><button className="rounded-lg bg-blue-600 px-4 py-1.5 text-sm font-bold text-white hover:bg-blue-700">Editar Cita</button></div></div>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Cliente</small><b className="mt-2 block">ales insti</b><p className="text-xs text-slate-400">+525578613202</p></div><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Resumen de Pago</small><b className="mt-2 block text-blue-500 text-xl font-black">$490</b></div></div>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Cliente</small><b className="mt-2 block">ales insti</b><p className="text-xs text-slate-400">+525578613202</p></div><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Resumen de Pago</small><b className="mt-2 block text-blue-500 text-xl font-black">$490</b> </div>(al mes)</div>
       <div className="mt-4 rounded-xl border border-white/10 p-4"><b>Servicios Asignados</b><div className="mt-3 rounded-lg bg-white/5 p-3 text-sm">Tinte de cabello · Cecilia - estilista</div></div>
       <div className="mt-4 rounded-xl border border-white/10 p-4"><b className="flex items-center gap-2"><MessageCircle className="size-5 text-green-500 fill-green-500" /> Enviar Mensaje</b><p className="mt-2 rounded-lg bg-neutral-900 p-3 text-xs text-slate-300">Aviso de retraso con tono profesional y directo.</p></div>
     </div>
@@ -273,9 +282,9 @@ export function Industries() {
     <section className="section">
       <SectionTitle kicker="Industrias" title="Diseñado para negocios guiados por citas." text="Aera se adapta a equipos de alto contacto donde el tiempo, la confianza y la presentación profesional importan." />
       <div className="container grid gap-4 md:grid-cols-4">
-        {industries.map((x) => (
-          <Link href="/industries" key={x} className="card p-6 font-black hover:text-aera-blue">
-            {x}
+        {industries.map((industry) => (
+          <Link href="/industries" key={industry.name} className="card p-6 font-black hover:text-aera-blue">
+            {industry.name}
           </Link>
         ))}
       </div>
@@ -286,9 +295,9 @@ export function Industries() {
 export function Testimonials() {
   return (
     <section className="section bg-slate-950 text-white">
-      <SectionTitle kicker="Pruebas" title="Se percibe premium antes de la primera visita." text="Los equipos eligen Aera porque hace que su negocio sea más fácil de administrar y más fácil de confiar." />
+      <SectionTitle kicker="Reviews" title="Se percibe premium antes de la primera visita." text="Los equipos eligen Aera porque hace que su negocio sea más fácil de administrar y más fácil de confiar." />
       <div className="container grid gap-4 md:grid-cols-3">
-        {['Nuestros clientes dejaron de preguntar cuando teniamos horarios disponibles. Simplemente reservan.', 'Ya no pierdo tiempo agendando citas.', 'Aera nos hizo ver más profesionales de la noche a la mañana.'].map((q, i) => (
+        {['Nuestros clientes dejaron de preguntar cuando teniamos horarios disponibles. Simplemente reservan.', 'Ya no pierdo clientes por no poder agendar citas.', 'Aera nos hizo ver más profesionales de la noche a la mañana.'].map((q, i) => (
           <div className="rounded-[2rem] bg-white/10 p-8" key={q}>
             “{q}”
             <p className="mt-8 text-sm text-blue-200">Fundador, Estudio {i + 1}</p>
@@ -367,7 +376,7 @@ export function PricingCards() {
                 </li>
               ))}
             </ul>
-            <a href="/contact" className="btn btn-primary mt-8 w-full">
+            <a href="https://wa.me/525518839216?text=Hola%20%F0%9F%91%8B.%20Vi%20la%20p%C3%A1gina%20de%20Aera%20y%20me%20interesa%20conocer%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio.%20Me%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n." className="btn btn-primary mt-8 w-full">
               {plan.cta}
             </a>
           </div>
@@ -404,9 +413,9 @@ export function FinalCTA() {
     <section className="section">
       <div className="container rounded-[3rem] bg-slate-950 p-12 text-center text-white shadow-glow">
         <p className="eyebrow">Listo</p>
-        <h2 className="h2 mt-3">Haga que la reserva se sienta sencilla.</h2>
-        <a href="/contact" className="btn btn-primary mt-8">
-          Solicitar demostración
+        <h2 className="h2 mt-3">Empieza a recibir reservas sin llamadas.</h2>
+        <a href="https://wa.me/525518839216?text=Hola%20%F0%9F%91%8B.%20Vi%20la%20p%C3%A1gina%20de%20Aera%20y%20me%20interesa%20conocer%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio.%20Me%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n." className="btn btn-primary mt-8">
+          Hablar con un asesor
         </a>
       </div>
     </section>
