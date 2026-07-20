@@ -184,7 +184,9 @@ export function Timeline() {
     <div className="container grid gap-4 md:grid-cols-4">
       {['Elija el servicio', 'Seleccione el profesional', 'Verifique por SMS', 'Llegue informado'].map((x, i) => (
         <motion.div {...fade} key={x} className="card p-7">
-          <span className="text-5xl font-black text-blue-500">0{i + 1}</span>
+          <span className="text-5xl font-black text-blue-500" key={`timeline-${i}`}>
+            0{i + 1}
+          </span>
           <h3 className="mt-8 text-xl font-black">{x}</h3>
           <p className="mt-2 text-slate-500">Diseñado para sentirse claro, rápido y natural en cualquier dispositivo.</p>
         </motion.div>
