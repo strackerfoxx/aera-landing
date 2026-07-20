@@ -19,7 +19,40 @@ export const features = [
   { title: 'Experiencia premium', icon: Sparkles, text: 'Un recorrido del cliente pulido que hace que su negocio se vea organizado antes de la visita.' }
 ];
 
-export const industries = ['Barberías', 'Salones de belleza', 'Clínicas', 'Dentistas', 'Veterinarios', 'Spas', 'Gimnasios', 'Consultores'];
+export const industries = [
+  {
+    name: 'Barberías',
+    description: 'Si quieres que tu barbería se vea más profesional, capture más clientes y reduzca cancelaciones, Aera convierte cada reserva en una venta más fácil, rápida y ordenada.',
+  },
+  {
+    name: 'Salones de belleza',
+    description: 'Para salones que desean crecer sin perder tiempo en llamadas, Aera mejora la experiencia del cliente y ayuda a convertir más citas en ingresos recurrentes.',
+  },
+  {
+    name: 'Clínicas',
+    description: 'Tu clínica puede ganar confianza y eficiencia con un sistema que organiza agendas, reduce fricción y deja a tus pacientes una reserva más simple y premium.',
+  },
+  {
+    name: 'Dentistas',
+    description: 'Aera ayuda a los consultorios dentales a captar más pacientes, reducir huecos en la agenda y ofrecer una experiencia de reserva mucho más seria y rentable.',
+  },
+  {
+    name: 'Veterinarios',
+    description: 'Si quieres que tu clínica veterinaria se vea más organizada y genere más reservas, Aera facilita la atención y convierte cada solicitud en una oportunidad de negocio.',
+  },
+  {
+    name: 'Spas',
+    description: 'Para negocios de bienestar que buscan vender más servicios y ofrecer una experiencia premium, Aera hace que cada reserva se sienta elegante, simple y profesional.',
+  },
+  {
+    name: 'Gimnasios',
+    description: 'Aera ayuda a los gimnasios a llenar clases, organizar horarios y vender más servicios con un proceso de reserva claro y sin complicaciones.',
+  },
+  {
+    name: 'Consultores',
+    description: 'Si tu consultorio depende de sesiones y seguimiento, Aera te ayuda a vender más disponibilidad, reducir pérdidas y presentar un negocio mucho más profesional.',
+  },
+];
 
 export const faqs = [
   ['¿Los clientes necesitan una cuenta?', 'No. Los clientes verifican su número de teléfono con un código SMS y pueden reservar sin contraseñas ni formularios largos.'],
@@ -40,7 +73,7 @@ export const pricingPlans = [
   },
   {
     name: 'Anual',
-    price: '$490',
+    price: '$490 (al mes)',
     billing: 'Facturación anual · $490 al mes',
     description: 'Perfecto para equipos que buscan mayor previsibilidad, mejor valor y una solución de software de reservas escalable para crecer con estabilidad, sin pagar por usuario.',
     features: ['Hasta 20 usuarios incluidos', 'Precio fijo por todo el equipo', 'Todos los beneficios del plan mensual', 'Mejor valor por continuidad', 'Soporte prioritario'],
