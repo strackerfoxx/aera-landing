@@ -66,7 +66,7 @@ export default function Features() {
         />
         <div className="container flex justify-center">
           <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary shine">
-            <MessageCircle className="mr-2 size-5" /> Quiero vender más citas por WhatsApp
+            <MessageCircle className="mr-2 size-5" /> Quiero una demostración por WhatsApp
           </a>
         </div>
       </section>
