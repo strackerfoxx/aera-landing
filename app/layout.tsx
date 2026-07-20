@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: 'Aera | Software de reservas de citas', template: '%s | Aera' },
   description: 'Aera es un software de reservas de citas para barberías, salones, clínicas, dentistas y negocios de servicios que necesitan gestionar citas online, disponibilidad y clientes de forma simple.',
+  icons: {
+    icon: '/icon.png',
+  },
   keywords: [
     'software de reservas de citas',
     'gestión de citas',
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className="font-sans antialiased">{children}</body>
+      <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );
 }
