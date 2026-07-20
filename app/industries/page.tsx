@@ -13,10 +13,10 @@ export default function IndustriesPage() {
       <section className="section pt-36">
         <SectionTitle kicker="Industrias" title="Reserva premium para cada categoría de servicio." text="Aera ofrece a cada industria un flujo de reserva más rápido, un calendario del personal más claro y una experiencia de cliente más profesional." />
         <div className="container grid gap-4 md:grid-cols-2">
-          {industries.map((x) => (
-            <article className="card p-8" key={x}>
-              <h2 className="text-3xl font-black">{x}</h2>
-              <p className="mt-4 text-slate-500">Sustituya llamadas, mensajes y hojas de cálculo desordenadas por reservas online, verificación por SMS, disponibilidad inteligente e historial de clientes adaptado a {x.toLowerCase()}.</p>
+          {industries.map((industry) => (
+            <article className="card p-8" key={industry.name}>
+              <h2 className="text-3xl font-black">{industry.name}</h2>
+              <p className="mt-4 text-slate-500">{industry.description}</p>
             </article>
           ))}
         </div>
