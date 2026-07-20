@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, ChevronDown, Play, X } from 'lucide-react';
+import { ArrowRight, Check, ChevronDown, Play, X, MessageCircle, Calendar } from 'lucide-react';
 import { faqs, features, industries, nav, pricingPlans } from '@/lib/content';
 
 const fade = {
@@ -98,8 +98,8 @@ export function ProductMockup() {
           <span className="rounded-full bg-blue-500 px-3 py-1 text-xs">12 reservas</span>
         </div>
         {['09:00 Corte de cabello', '10:00 Consulta', '11:30 Tratamiento', '13:00 Seguimiento'].map((x, i) => (
-          <div key={x} className="mb-3 rounded-2xl bg-white/10 p-4" style={{ marginLeft: i % 2 ? 36 : 0 }}>
-            <p className="font-bold">{x}</p>
+          <div key={x} className="mb-3 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-4 border-l-4 border-l-blue-500" style={{ marginLeft: i % 2 ? 36 : 0 }}>
+            <p className="font-bold flex items-center gap-2"><Calendar className="size-4" /> {x}</p>
             <p className="text-sm text-slate-300">Verificado por SMS · sin cuenta necesaria</p>
           </div>
         ))}
@@ -123,7 +123,9 @@ export function FeatureGrid() {
     <div className="container grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {features.map((f, i) => (
         <motion.div {...fade} transition={{ duration: 0.6, delay: i * 0.04 }} key={f.title} className="card p-6 transition hover:-translate-y-1 hover:shadow-glow">
-          <f.icon className="mb-8 size-7 text-aera-blue" />
+          <div className="mb-6 inline-flex rounded-xl bg-blue-50 p-3">
+            <f.icon className="size-7 text-blue-600" />
+          </div>
           <h3 className="text-xl font-black">{f.title}</h3>
           <p className="mt-3 text-slate-500">{f.text}</p>
         </motion.div>
@@ -229,7 +231,9 @@ function TodayScreenshot() {
         <div className="mt-10 grid gap-5 lg:grid-cols-[1fr_270px]">
           <div className="overflow-hidden rounded-2xl bg-neutral-900">
             <div className="grid grid-cols-4 border-b border-white/10 px-5 py-4 text-xs font-bold text-slate-400"><span>Hora</span><span>Estado</span><span>Cliente</span><span>Servicios</span></div>
-            <div className="grid grid-cols-4 px-5 py-6 text-sm font-bold"><span>10:00</span><span><b className="rounded-full border border-yellow-400 bg-yellow-500/70 px-3 py-1 text-xs">Agendada</b></span><span>Alex Muñoz</span><span>Tinte de cabello</span></div>
+            <div className="grid grid-cols-4 border-b border-white/5 px-5 py-3 text-sm font-bold"><span>11:20</span><span><span className="rounded-full border border-yellow-500/50 bg-yellow-500/10 px-3 py-1 text-xs text-yellow-500">Agendada</span></span><span>Diego Castle</span><span>Retiro Esmalte</span></div>
+            <div className="grid grid-cols-4 border-b border-white/5 px-5 py-3 text-sm font-bold"><span>09:20</span><span><span className="rounded-full border border-red-500/50 bg-red-500/10 px-3 py-1 text-xs text-red-500">Cancelada</span></span><span>Alex Edu</span><span>Manicure Ruso</span></div>
+            <div className="grid grid-cols-4 px-5 py-3 text-sm font-bold"><span>10:20</span><span><span className="rounded-full border border-green-500/50 bg-green-500/10 px-3 py-1 text-xs text-green-500">Confirmada</span></span><span>Viktor</span><span>Manicure Ruso</span></div>
           </div>
           <MiniCalendar />
         </div>
@@ -240,7 +244,7 @@ function TodayScreenshot() {
 
 function MiniCalendar() {
   const days = ['Su','Mo','Tu','We','Th','Fr','Sa','28','29','30','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1'];
-  return <div className="rounded-2xl bg-neutral-900 p-5 text-center text-xs"><b>July 2026</b><div className="mt-5 grid grid-cols-7 gap-3">{days.map((d,i)=><span key={i} className={(d==='1'?'rounded-full bg-blue-600 py-2 ':d==='18'?'rounded-lg bg-white/10 py-2 ':'py-2 ') + (i<7?'text-slate-400':'')}>{d}</span>)}</div></div>;
+  return <div className="rounded-2xl bg-neutral-900 p-5 text-center text-xs"><b>July 2026</b><div className="mt-5 grid grid-cols-7 gap-3">{days.map((d,i)=><span key={i} className={(d==='1'?'rounded-full bg-blue-600 text-white py-2 ':d==='18'?'rounded-lg bg-white/10 py-2 ':'py-2 ') + (i<7?'text-slate-400':'')}>{d}</span>)}</div></div>;
 }
 
 function CalendarScreenshot() {
@@ -248,7 +252,7 @@ function CalendarScreenshot() {
     <div className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-black p-5 text-white">
       <h3 className="text-3xl font-black tracking-tight">Calendario de Citas</h3>
       <div className="mt-6 inline-flex items-center gap-4 rounded-xl bg-neutral-900 p-4 text-sm font-bold">Total Citas del Mes: <span className="rounded-full bg-white/10 px-3 py-2">2</span></div>
-      <div className="mt-5 rounded-2xl border border-white/10 bg-neutral-900 p-5 text-center text-xs"><b>July 2026</b><div className="mt-6 grid grid-cols-7 gap-y-7">{Array.from({length:35},(_,i)=>i+1).map((d)=><span key={d} className={d===4||d===5?'mx-auto grid size-12 place-items-center rounded-full bg-green-600/40 text-green-300':d===18?'mx-auto grid size-12 place-items-center rounded-full bg-white/10':'font-bold'}>{d<=31?d:''}</span>)}</div></div>
+      <div className="mt-5 rounded-2xl border border-white/10 bg-neutral-900 p-5 text-center text-xs"><b>July 2026</b><div className="mt-6 grid grid-cols-7 gap-y-7">{Array.from({length:35},(_,i)=>i+1).map((d)=><span key={d} className={d===4||d===5?'mx-auto flex flex-col items-center justify-center size-12 rounded-full bg-blue-600 text-white font-bold':d===18?'mx-auto grid size-12 place-items-center rounded-full bg-white/10':'font-bold'}>{d<=31?d:''}{d===4||d===5?<span className="text-[10px] text-blue-200 font-normal leading-tight">2 citas</span>:''}</span>)}</div></div>
     </div>
   );
 }
@@ -256,10 +260,10 @@ function CalendarScreenshot() {
 function AppointmentDetailScreenshot() {
   return (
     <div className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-black p-5 text-white">
-      <div className="flex items-center justify-between"><h3 className="text-2xl font-black tracking-tight">Detalles de la Cita</h3><span className="rounded-full bg-yellow-600 px-3 py-1 text-xs">Agendada</span></div>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Cliente</small><b className="mt-2 block">ales insti</b><p className="text-xs text-slate-400">+525578613202</p></div><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Resumen de Pago</small><b className="mt-2 block text-blue-400">$490</b></div></div>
+      <div className="flex items-center justify-between"><h3 className="text-2xl font-black tracking-tight">Detalles de la Cita</h3><div className="flex gap-2 items-center"><span className="rounded-full bg-yellow-600 px-3 py-1 text-xs text-yellow-100">Agendada</span><button className="rounded-lg bg-blue-600 px-4 py-1.5 text-sm font-bold text-white hover:bg-blue-700">Editar Cita</button></div></div>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Cliente</small><b className="mt-2 block">ales insti</b><p className="text-xs text-slate-400">+525578613202</p></div><div className="rounded-xl bg-neutral-900 p-4"><small className="text-slate-400">Resumen de Pago</small><b className="mt-2 block text-blue-500 text-xl font-black">$490</b></div></div>
       <div className="mt-4 rounded-xl border border-white/10 p-4"><b>Servicios Asignados</b><div className="mt-3 rounded-lg bg-white/5 p-3 text-sm">Tinte de cabello · Cecilia - estilista</div></div>
-      <div className="mt-4 rounded-xl border border-white/10 p-4"><b>Enviar Mensaje</b><p className="mt-2 rounded-lg bg-neutral-900 p-3 text-xs text-slate-300">Aviso de retraso con tono profesional y directo.</p></div>
+      <div className="mt-4 rounded-xl border border-white/10 p-4"><b className="flex items-center gap-2"><MessageCircle className="size-5 text-green-500 fill-green-500" /> Enviar Mensaje</b><p className="mt-2 rounded-lg bg-neutral-900 p-3 text-xs text-slate-300">Aviso de retraso con tono profesional y directo.</p></div>
     </div>
   );
 }
