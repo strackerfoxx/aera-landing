@@ -7,6 +7,13 @@ import {
   Users,
   BarChart3,
   Sparkles,
+  Scissors,
+  Stethoscope,
+  Smile,
+  Dog,
+  Flower2,
+  Dumbbell,
+  Briefcase,
 } from 'lucide-react';
 
 export const siteUrl = 'https://www.getaera.app';
@@ -64,41 +71,49 @@ export const features = [
 export const industries = [
   {
     name: 'Barberías',
+    icon: Scissors,
     description:
       'Permita que sus clientes reserven cuando quieran, reduzca llamadas y mantenga la agenda siempre organizada.',
   },
   {
     name: 'Salones de belleza',
+    icon: Sparkles,
     description:
       'Organice a todo su equipo, reduzca cancelaciones y permita que los clientes reserven sin esperar una respuesta.',
   },
   {
     name: 'Clínicas',
+    icon: Stethoscope,
     description:
       'Facilite la programación de consultas y mantenga la agenda médica organizada en todo momento.',
   },
   {
     name: 'Dentistas',
+    icon: Smile,
     description:
       'Mantenga el calendario organizado, reduzca espacios vacíos y facilite la reserva de nuevas citas.',
   },
   {
     name: 'Veterinarios',
+    icon: Dog,
     description:
       'Permita que los propietarios agenden citas fácilmente y gestione toda la agenda desde un solo lugar.',
   },
   {
     name: 'Spas',
+    icon: Flower2,
     description:
       'Ofrezca una experiencia de reserva sencilla que refleje la calidad de su servicio desde el primer momento.',
   },
   {
     name: 'Gimnasios',
+    icon: Dumbbell,
     description:
       'Organice clases, sesiones y entrenadores sin depender de llamadas o mensajes.',
   },
   {
     name: 'Consultores',
+    icon: Briefcase,
     description:
       'Permita que sus clientes reserven reuniones disponibles sin intercambiar decenas de mensajes.',
   },
@@ -137,7 +152,7 @@ export const pricingPlans = [
       'Confirmaciones y recordatorios automáticos',
       'Gestión de clientes y citas',
     ],
-    cta: 'Agendar demostración',
+    cta: 'Empezar ahora',
     highlight: false,
   },
   {
@@ -153,7 +168,7 @@ export const pricingPlans = [
       'Ahorro anual',
       'Soporte prioritario',
     ],
-    cta: 'Agendar demostración',
+    cta: 'Empezar ahora',
     highlight: true,
   },
   {
@@ -169,7 +184,7 @@ export const pricingPlans = [
       'Integraciones personalizadas',
       'Soporte especializado',
     ],
-    cta: 'Hablar con ventas',
+    cta: 'Comenzar',
     highlight: false,
   },
 ];
