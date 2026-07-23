@@ -103,7 +103,7 @@ export function Hero() {
       <div className="container relative grid items-center gap-12 lg:grid-cols-[.95fr_1.05fr]">
         <motion.div {...fade}>
           <p className="eyebrow">Citas sin fricción</p>
-          <h1 className="mt-5 text-[clamp(4rem,9vw,8.6rem)] font-black leading-[.84] tracking-[-.08em]">Reciba reservas las 24 horas.</h1>
+          <h1 className="mt-5 text-[clamp(4rem,9vw,8.6rem)] font-black leading-[.84] tracking-[-.08em]">Reciba reservas 24 horas.</h1>
           <p className="lead mt-7 max-w-xl text-lg sm:text-xl font-medium text-slate-500">
             Aera ayuda a los clientes a reservar en menos de un minuto con solo su número de teléfono, mientras su equipo gestiona servicios, profesionales, horarios, clientes y citas desde un sistema simple y claro.
           </p>
