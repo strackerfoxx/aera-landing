@@ -412,6 +412,14 @@ export function PricingCards() {
           </div>
         ))}
       </div>
+
+      <div className="mx-auto mt-12 max-w-4xl rounded-2xl border-2 border-slate-900 bg-slate-900 p-8 text-center text-white shadow-card md:p-10">
+        <h3 className="text-2xl font-black uppercase tracking-wide text-blue-400 sm:text-3xl">Garantía Incondicional y Montaje Incluido</h3>
+        <p className="mt-4 text-lg font-medium leading-relaxed text-slate-200">
+          Usted asume absolutamente cero riesgo. Adquiera hoy y cuenta con nuestra <strong>garantía incondicional de 30 días, respaldada por un reembolso total de su dinero</strong> si no cumple con sus expectativas más exigentes. Además, para garantizar su éxito inmediato, <strong>el servicio completo de montaje y configuración de su sistema viene estrictamente incluido en el precio.</strong> No deje pasar esta oportunidad de transformar su operación.
+        </p>
+      </div>
+
       <p className="mx-auto mt-8 max-w-3xl text-center text-slate-600">
         Aera ayuda a barberías, salones, clínicas, dentistas, veterinarios y consultorios a automatizar la reserva online, reducir la fricción operativa y convertir más visitas en clientes con software de gestión de citas listo para crecer.
       </p>
