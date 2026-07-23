@@ -5,7 +5,46 @@
 ▲ Next.js 16.2.10 (Turbopack)
 - Local:         http://localhost:3000
 - Network:       http://192.168.0.2:3000
-✓ Ready in 505ms
+✓ Ready in 531ms
 
-○ Compiling /pricing ...
- GET /pricing 200 in 7.3s (next.js: 6.6s, application-code: 673ms)
+○ Compiling / ...
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from Timeline. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from Timeline. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from Timeline. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from Timeline. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from FeatureGrid. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 7.5s (next.js: 6.7s, application-code: 809ms)
+[browser] Each child in a list should have a unique "key" prop.
+
+Check the render method of `ForwardRef(motion.div)`. It was passed a child from Timeline. See https://react.dev/link/warning-keys for more information.
