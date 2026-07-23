@@ -1,6 +1,16 @@
-import { CalendarCheck, Clock, MessagesSquare, ShieldCheck, Smartphone, Users, BarChart3, Sparkles } from 'lucide-react';
+import {
+  CalendarCheck,
+  Clock,
+  MessagesSquare,
+  ShieldCheck,
+  Smartphone,
+  Users,
+  BarChart3,
+  Sparkles,
+} from 'lucide-react';
 
 export const siteUrl = 'https://www.getaera.app';
+
 export const nav = [
   { label: 'Funciones', href: '/features' },
   { label: 'Industrias', href: '/industries' },
@@ -9,56 +19,108 @@ export const nav = [
 ];
 
 export const features = [
-  { title: 'Reserva de citas', icon: CalendarCheck, text: 'Permita que los clientes elijan el servicio, el profesional y la hora adecuados sin crear una cuenta.' },
-  { title: 'Gestión de clientes', icon: Users, text: 'Cada reserva se convierte en un perfil claro con historial, notas y contexto de contacto.' },
-  { title: 'Calendario profesional', icon: Clock, text: 'Vea la disponibilidad del equipo, la carga diaria, los huecos y las superposiciones en una vista operativa clara.' },
-  { title: 'Notificaciones automáticas', icon: MessagesSquare, text: 'Envíe confirmaciones, recordatorios, actualizaciones y seguimientos con plantillas consistentes.' },
-  { title: 'Inicio de sesión por SMS', icon: ShieldCheck, text: 'La verificación por número de teléfono reemplaza las contraseñas para que los clientes completen la reserva en menos de un minuto.' },
-  { title: 'Experiencia móvil', icon: Smartphone, text: 'Flujos rápidos y fáciles de usar, pensados para la forma en que las personas reservan citas.' },
-  { title: 'Panel de negocio', icon: BarChart3, text: 'Controle ingresos, citas, carga del equipo y demanda de servicios de un vistazo.' },
-  { title: 'Experiencia premium', icon: Sparkles, text: 'Un recorrido del cliente pulido que hace que su negocio se vea organizado antes de la visita.' }
+  {
+    title: 'Reservas online',
+    icon: CalendarCheck,
+    text: 'Sus clientes reservan una cita en menos de un minuto, sin llamadas ni registros complicados.',
+  },
+  {
+    title: 'Gestión de clientes',
+    icon: Users,
+    text: 'Mantenga toda la información de sus clientes organizada en un solo lugar con historial y datos de contacto.',
+  },
+  {
+    title: 'Agenda del equipo',
+    icon: Clock,
+    text: 'Organice la disponibilidad de todo su equipo y evite conflictos de horario desde un único calendario.',
+  },
+  {
+    title: 'Recordatorios automáticos',
+    icon: MessagesSquare,
+    text: 'Reduzca las ausencias enviando confirmaciones y recordatorios con un click.',
+  },
+  {
+    title: 'Acceso con SMS',
+    icon: ShieldCheck,
+    text: 'Los clientes reservan usando únicamente su número de teléfono, sin contraseñas ni cuentas.',
+  },
+  {
+    title: 'Diseñado para móviles',
+    icon: Smartphone,
+    text: 'Una experiencia rápida y sencilla para que más clientes completen su reserva desde cualquier dispositivo.',
+  },
+  {
+    title: 'Panel de control',
+    icon: BarChart3,
+    text: 'Consulte sus citas, clientes e ingresos desde un único panel fácil de usar.',
+  },
+  {
+    title: 'Mejor primera impresión',
+    icon: Sparkles,
+    text: 'Ofrezca una experiencia de reserva moderna que genere confianza desde el primer contacto.',
+  },
 ];
 
 export const industries = [
   {
     name: 'Barberías',
-    description: 'Si quieres que tu barbería se vea más profesional, capture más clientes y reduzca cancelaciones, Aera convierte cada reserva en una venta más fácil, rápida y ordenada.',
+    description:
+      'Permita que sus clientes reserven cuando quieran, reduzca llamadas y mantenga la agenda siempre organizada.',
   },
   {
     name: 'Salones de belleza',
-    description: 'Para salones que desean crecer sin perder tiempo en llamadas, Aera mejora la experiencia del cliente y ayuda a convertir más citas en ingresos recurrentes.',
+    description:
+      'Organice a todo su equipo, reduzca cancelaciones y permita que los clientes reserven sin esperar una respuesta.',
   },
   {
     name: 'Clínicas',
-    description: 'Tu clínica puede ganar confianza y eficiencia con un sistema que organiza agendas, reduce fricción y deja a tus pacientes una reserva más simple y premium.',
+    description:
+      'Facilite la programación de consultas y mantenga la agenda médica organizada en todo momento.',
   },
   {
     name: 'Dentistas',
-    description: 'Aera ayuda a los consultorios dentales a captar más pacientes, reducir huecos en la agenda y ofrecer una experiencia de reserva mucho más seria y rentable.',
+    description:
+      'Mantenga el calendario organizado, reduzca espacios vacíos y facilite la reserva de nuevas citas.',
   },
   {
     name: 'Veterinarios',
-    description: 'Si quieres que tu clínica veterinaria se vea más organizada y genere más reservas, Aera facilita la atención y convierte cada solicitud en una oportunidad de negocio.',
+    description:
+      'Permita que los propietarios agenden citas fácilmente y gestione toda la agenda desde un solo lugar.',
   },
   {
     name: 'Spas',
-    description: 'Para negocios de bienestar que buscan vender más servicios y ofrecer una experiencia premium, Aera hace que cada reserva se sienta elegante, simple y profesional.',
+    description:
+      'Ofrezca una experiencia de reserva sencilla que refleje la calidad de su servicio desde el primer momento.',
   },
   {
     name: 'Gimnasios',
-    description: 'Aera ayuda a los gimnasios a llenar clases, organizar horarios y vender más servicios con un proceso de reserva claro y sin complicaciones.',
+    description:
+      'Organice clases, sesiones y entrenadores sin depender de llamadas o mensajes.',
   },
   {
     name: 'Consultores',
-    description: 'Si tu consultorio depende de sesiones y seguimiento, Aera te ayuda a vender más disponibilidad, reducir pérdidas y presentar un negocio mucho más profesional.',
+    description:
+      'Permita que sus clientes reserven reuniones disponibles sin intercambiar decenas de mensajes.',
   },
 ];
 
 export const faqs = [
-  ['¿Los clientes necesitan una cuenta?', 'No. Los clientes verifican su número de teléfono con un código SMS y pueden reservar sin contraseñas ni formularios largos.'],
-  ['¿Cada profesional puede tener disponibilidad separada?', 'Sí. Aera admite horarios de profesionales, días asignados, horas de trabajo e intervalos de citas.'],
-  ['¿Aera solo sirve para salones?', 'No. Aera está pensado para cualquier negocio basado en citas, desde clínicas y dentistas hasta consultores y gimnasios.'],
-  ['¿Qué tan rápido se puede implementar?', 'La mayoría de equipos pueden configurar servicios, personal, horarios y su flujo de reserva en una sola sesión de implementación.']
+  [
+    '¿Cuánto tiempo tarda la implementación?',
+    'La configuración inicial suele completarse en un par de horas. Nosotros dejamos Aera listo para que pueda empezar a recibir reservas cuanto antes.',
+  ],
+  [
+    '¿Mis clientes necesitan descargar una aplicación?',
+    'No. Solo abren un enlace y reservan desde el navegador de su teléfono o computadora.',
+  ],
+  [
+    '¿Qué pasa si necesito ayuda?',
+    'Nuestro equipo le acompaña durante la configuración y está disponible para resolver cualquier duda cuando la necesite.',
+  ],
+  [
+    '¿Qué pasa si Aera no cumple mis expectativas?',
+    'Puede probar Aera durante 30 días. Si no es la solución adecuada para su negocio, le devolvemos el 100% de su dinero.',
+  ],
 ];
 
 export const pricingPlans = [
@@ -66,27 +128,48 @@ export const pricingPlans = [
     name: 'Mensual',
     price: '$590',
     billing: 'Facturación mensual',
-    description: 'Ideal para negocios que necesitan un software de reservas de citas simple, rápido de implementar y listo para captar clientes desde el primer día, con precio fijo para hasta 20 usuarios.',
-    features: ['Hasta 20 usuarios incluidos', 'Precio fijo por todo el equipo', 'Agenda online 24/7', 'Confirmaciones y recordatorios automáticos', 'Gestión de clientes y citas'],
-    cta: 'Solicitar demo',
+    description:
+      'Todo lo que necesita para aceptar reservas online, organizar su agenda y gestionar hasta 20 usuarios por un precio fijo.',
+    features: [
+      'Hasta 20 usuarios incluidos',
+      'Precio fijo para todo el equipo',
+      'Reservas online 24/7',
+      'Confirmaciones y recordatorios automáticos',
+      'Gestión de clientes y citas',
+    ],
+    cta: 'Agendar demostración',
     highlight: false,
   },
   {
     name: 'Anual',
     price: '$490 (al mes)',
-    billing: 'Facturación anual · $490 al mes',
-    description: 'Perfecto para equipos que buscan mayor previsibilidad, mejor valor y una solución de software de reservas escalable para crecer con estabilidad, sin pagar por usuario.',
-    features: ['Hasta 20 usuarios incluidos', 'Precio fijo por todo el equipo', 'Todos los beneficios del plan mensual', 'Mejor valor por continuidad', 'Soporte prioritario'],
-    cta: 'Solicitar demo',
+    billing: 'Facturación anual · $5880 total',
+    description:
+      'Obtenga el mejor precio pagando un año completo y ahorre cada mes sin perder ninguna funcionalidad.',
+    features: [
+      'Hasta 20 usuarios incluidos',
+      'Precio fijo para todo el equipo',
+      'Todas las funciones del plan mensual',
+      'Ahorro anual',
+      'Soporte prioritario',
+    ],
+    cta: 'Agendar demostración',
     highlight: true,
   },
   {
-    name: 'Empresas a medida',
+    name: 'Empresas',
     price: 'Personalizado',
     billing: 'Para negocios con varias sucursales',
-    description: 'Solución personalizada para cadenas, franquicias y negocios con varias sucursales que necesitan un sistema de gestión de citas centralizado y escalable.',
-    features: ['Administración centralizada', 'Perfiles por sede y equipo', 'Reportes multiubicación', 'Integraciones y soporte especializado'],
-    cta: 'Contactar ventas',
+    description:
+      'Una solución adaptada para cadenas y empresas que necesitan administrar varias sedes desde un solo lugar.',
+    features: [
+      'Administración centralizada',
+      'Perfiles por sucursal',
+      'Reportes multiubicación',
+      'Integraciones personalizadas',
+      'Soporte especializado',
+    ],
+    cta: 'Hablar con ventas',
     highlight: false,
   },
 ];

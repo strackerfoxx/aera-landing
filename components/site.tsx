@@ -72,7 +72,7 @@ export function Navbar() {
 
 export function DemoModal({ close }: { close: () => void }) {
   return (
-    <div className="fixed inset-0 z-[60] grid place-items-center bg-slate-950/45 p-4 backdrop-blur">
+    <div className="fixed inset-0 z-60 grid place-items-center bg-slate-950/45 p-4 backdrop-blur">
       <motion.div initial={{ scale: 0.94, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="card max-w-xl p-6">
         <div className="flex justify-between">
           <div>
@@ -99,11 +99,11 @@ export function DemoModal({ close }: { close: () => void }) {
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-grid px-4 pb-24 pt-36">
-      <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-blue-100/80 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-80 bg-linear-to-b from-blue-100/80 to-transparent" />
       <div className="container relative grid items-center gap-12 lg:grid-cols-[.95fr_1.05fr]">
         <motion.div {...fade}>
           <p className="eyebrow">Citas sin fricción</p>
-          <h1 className="mt-5 text-[clamp(4rem,9vw,8.6rem)] font-black leading-[.84] tracking-[-.08em]">La reserva hecha sencilla.</h1>
+          <h1 className="mt-5 text-[clamp(4rem,9vw,8.6rem)] font-black leading-[.84] tracking-[-.08em]">Reciba reservas las 24 horas.</h1>
           <p className="lead mt-7 max-w-xl">
             Aera ayuda a los clientes a reservar en menos de un minuto con solo su número de teléfono, mientras su equipo gestiona servicios, profesionales, horarios, clientes y citas desde un sistema simple y claro.
           </p>
@@ -124,14 +124,14 @@ export function Hero() {
 
 export function ProductMockup() {
   return (
-    <motion.div {...fade} className="float card relative mx-auto w-full max-w-[34rem] p-3 shadow-glow sm:p-4">
-      <div className="rounded-[1.5rem] bg-slate-950 p-4 text-white sm:p-5">
+    <motion.div {...fade} className="float card relative mx-auto w-full max-w-136 p-3 shadow-glow sm:p-4">
+      <div className="rounded-3xl bg-slate-950 p-4 text-white sm:p-5">
         <div className="mb-5 flex items-center justify-between">
           <b>Hoy</b>
           <span className="rounded-full bg-blue-500 px-3 py-1 text-xs">12 reservas</span>
         </div>
         {['09:00 Corte de cabello', '10:00 Consulta', '11:30 Tratamiento', '13:00 Seguimiento'].map((x, i) => (
-          <div key={x} className="mb-3 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-4 border-l-4 border-l-blue-500" style={{ marginLeft: i % 2 ? 36 : 0 }}>
+          <div key={x} className="mb-3 rounded-2xl bg-linear-to-br from-white/10 to-white/5 p-4 border-l-4 border-l-blue-500" style={{ marginLeft: i % 2 ? 36 : 0 }}>
             <p className="font-bold flex items-center gap-2"><Calendar className="size-4" /> {x}</p>
             <p className="text-sm text-slate-300">Verificado por SMS · sin cuenta necesaria</p>
           </div>
@@ -171,7 +171,7 @@ export function HomeSections() {
   return (
     <>
       <section className="section">
-        <SectionTitle kicker="Problema" title="Cada minuto sin responder cuesta ventas." text="Cuentas, contraseñas, llamadas telefónicas, preguntas repetidas y disponibilidad poco clara generan abandono antes de que exista la cita. Si el dueño está trabajando, Aera responde y agenda por él." />
+        <SectionTitle kicker="Problema" title="Mientras responde mensajes, otros negocios ya aceptaron esa reserva." text="Cuentas, contraseñas, llamadas telefónicas, preguntas repetidas y disponibilidad poco clara generan abandono antes de que exista la cita. Si el dueño está trabajando, Aera responde y agenda por él." />
         <div className="container grid gap-4 md:grid-cols-3">
           {['78% de los clientes se va con el primer negocio que responde; la velocidad decide la venta.', '40% intenta reservar de noche o en fines de semana; sin agenda automática, esa demanda se pierde.', '30% a 40% de no-shows destruyen ingresos cuando la agenda y los recordatorios son manuales.'].map((x) => (
             <div className="card p-8 text-2xl font-black" key={x}>
@@ -228,7 +228,7 @@ export function ProductScreenshots() {
     <section className="section bg-slate-950 text-white">
       <SectionTitle kicker="Producto real" title="Muestre lo que cierra la venta." text="Incluimos pantallas reales solo donde sustituyen explicación por confianza: calendario, operación diaria y detalle accionable de cada cita." />
       <div className="container grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
-        <motion.div {...fade} className="rounded-[2rem] border border-white/10 bg-black p-4 shadow-glow">
+        <motion.div {...fade} className="rounded-4xl border border-white/10 bg-black p-4 shadow-glow">
           <TodayScreenshot />
           <div className="mt-5 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
             <p><b className="text-white">Agenda clara:</b> el equipo ve hora, estado, cliente y servicio sin abrir múltiples vistas.</p>
@@ -237,11 +237,11 @@ export function ProductScreenshots() {
           </div>
         </motion.div>
         <div className="grid gap-6">
-          <motion.div {...fade} className="rounded-[2rem] border border-white/10 bg-black p-4 shadow-glow">
+          <motion.div {...fade} className="rounded-4xl border border-white/10 bg-black p-4 shadow-glow">
             <CalendarScreenshot />
             <p className="mt-4 text-sm text-slate-300"><b className="text-white">Vista mensual que vende orden:</b> los días con citas destacan sin saturar al usuario.</p>
           </motion.div>
-          <motion.div {...fade} className="rounded-[2rem] border border-white/10 bg-black p-4 shadow-glow">
+          <motion.div {...fade} className="rounded-4xl border border-white/10 bg-black p-4 shadow-glow">
             <AppointmentDetailScreenshot />
             <p className="mt-4 text-sm text-slate-300"><b className="text-white">Detalle listo para actuar:</b> pago, servicio, profesional y mensajes se gestionan desde una sola pantalla.</p>
           </motion.div>
@@ -264,7 +264,7 @@ function AppSidebar() {
 
 function TodayScreenshot() {
   return (
-    <div className="flex min-h-[360px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-black text-white">
+    <div className="flex min-h-90 overflow-hidden rounded-[1.35rem] border border-white/10 bg-black text-white">
       <div className="min-w-0 flex-1 p-3 sm:p-5">
         <div className="flex flex-wrap items-start justify-between gap-3"><h3 className="text-2xl font-black tracking-tight sm:text-4xl">Citas de hoy</h3><button className="rounded-full bg-blue-600 px-3 py-2 text-[11px] font-bold sm:px-4 sm:text-xs">Crear cita</button></div>
         <div className="mt-6 sm:mt-10">
@@ -328,7 +328,7 @@ export function Testimonials() {
       <SectionTitle kicker="Reviews" title="Se percibe premium antes de la primera visita." text="Los equipos eligen Aera porque hace que su negocio sea más fácil de administrar y más fácil de confiar." />
       <div className="container grid gap-4 md:grid-cols-3">
         {['Nuestros clientes dejaron de preguntar cuando teniamos horarios disponibles. Simplemente reservan.', 'Ya no pierdo clientes por no poder agendar citas.', 'Aera nos hizo ver más profesionales de la noche a la mañana.'].map((q, i) => (
-          <div className="rounded-[2rem] bg-white/10 p-8" key={q}>
+          <div className="rounded-4xl bg-white/10 p-8" key={q}>
             “{q}”
             <p className="mt-8 text-sm text-blue-200">Fundador, Estudio {i + 1}</p>
           </div>
@@ -366,7 +366,7 @@ export function Stats() {
   return (
     <section className="section bg-aera-soft">
       <div className="container grid gap-4 text-center md:grid-cols-3">
-        {['78% elige al negocio que responde primero', '40% intenta reservar fuera del horario comercial', '30%–40% de citas manuales pueden terminar en no-show'].map((x) => (
+        {['Tus clientes pueden reservar al instante, incluso cuando estás ocupado.', 'Recibe reservas las 24 horas, incluso cuando tu negocio está cerrado.', 'Los recordatorios automáticos ayudan a reducir las citas perdidas.'].map((x) => (
           <div className="card p-10 text-3xl font-black" key={x}>{x}</div>
         ))}
       </div>
@@ -414,9 +414,9 @@ export function PricingCards() {
       </div>
 
       <div className="mx-auto mt-12 max-w-4xl rounded-2xl border-2 border-slate-900 bg-slate-900 p-8 text-center text-white shadow-card md:p-10">
-        <h3 className="text-2xl font-black uppercase tracking-wide text-blue-400 sm:text-3xl">Garantía Incondicional y Montaje Incluido</h3>
+        <h3 className="text-2xl font-black uppercase tracking-wide text-blue-400 sm:text-3xl">Pruebe Aera sin riesgo. Configuración incluida.</h3>
         <p className="mt-4 text-lg font-medium leading-relaxed text-slate-200">
-          Usted asume absolutamente cero riesgo. Adquiera hoy y cuenta con nuestra <strong>garantía incondicional de 30 días, respaldada por un reembolso total de su dinero</strong> si no cumple con sus expectativas más exigentes. Además, para garantizar su éxito inmediato, <strong>el servicio completo de montaje y configuración de su sistema viene estrictamente incluido en el precio.</strong> No deje pasar esta oportunidad de transformar su operación.
+          Empiece hoy sin preocuparse por la instalación. <strong>Nosotros configuramos todo para que pueda empezar a recibir reservas cuanto antes.</strong> <strong>Además, cuenta con una garantía de 30 días: si Aera no es lo que esperaba, le devolvemos el 100% de su dinero.</strong> 
         </p>
       </div>
 
